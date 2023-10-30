@@ -1,17 +1,18 @@
-from odoo import fields, models , api
+
+from odoo import fields, models , api,_
 
 class Pharmacy(models.Model):
     _name = "pharma.pharmacy"
     _rec_name = 'fname'
 
-    pharmacy_id = fields.Integer(string="Pharmacy ID")
-    fname = fields.Char(string="First Name")
-    lname = fields.Char(string="Last Name")
-    fullname = fields.Char(string="Full Name", compute='_compute_fullname')
-    address = fields.Char(string="Address")
-    contact_info = fields.Text(string="Contact Information")
-    opening_hours = fields.Float(string="Opening Hours")
-    employees = fields.One2many('pharma.employee', 'pharmacy_id', string="Employees")
+    pharmacy_id = fields.Integer(string=_('Pharmacy ID'))
+    fname = fields.Char(string=_("First Name"))
+    lname = fields.Char(string=_("Last Name"))
+    fullname = fields.Char(string=_("Full Name"), compute='_compute_fullname')
+    address = fields.Char(string=_("Address"))
+    contact_info = fields.Text(string=_("Contact Information"))
+    opening_hours = fields.Float(string=_("Opening Hours"))
+    employees = fields.One2many('pharma.employee', 'pharmacy_id', string=_("Employees"))
 
 
     def unlink(self):

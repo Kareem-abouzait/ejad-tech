@@ -4,7 +4,7 @@
     'description':'odoo Training App',
     'version':'0.1',
 
-    # 'depends':[]
+    'depends':['base','website'],
     'data':[
             'views/pharmacy_view.xml',
             'views/employee_view.xml',
